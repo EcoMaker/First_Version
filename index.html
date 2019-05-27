@@ -1,83 +1,104 @@
+
 <!doctype HTML>
 <html>
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<script src="https://ecomaker.github.io/testing/aframe-ar.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+<script src="./script.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'> 
+    <! geändert von a-scene embedded arjs; debugUIEnabled: false nimmt die ganzen debuginfos raus>
 
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="./script.js"></script>
-    <body style='margin : 0px; overflow: hidden;'>
-       
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
-
-            
-            
-            
-        <a-assets>
-            <!3D-Druck>
-            <a-asset-item id="3D-Druck" src="https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/3D-Druck_gedoppelt.gltf"></a-asset-item>
-            
-            <!Fräsen>
-            <a-asset-item id="Fräsen" src="https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Fräsen_doppel.gltf"></a-asset-item>
-            
-            <!Lasercutten>
-            <a-asset-item id="Lasercutten" src="https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Lasercutten_Mesh_doppel.gltf"></a-asset-item>
-            
-            <!ecoDesign>
-            <a-asset-item id="ecoDesign" src="https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/ecoDesign_doppel.gltf"></a-asset-item>
-            
-            <!Einstieg>
-            <a-asset-item id="Allgemein" src="https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Einstieg.gltf"></a-asset-item>
-        </a-assets>
-
-            
-            
-            
-        <!3D-Druck>            
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/3D-Druck.patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#3D-Druck">
-            </a-entity>
-        </a-marker>
-            
-            
-        <!Fräsen>   
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Fräsen.patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#Fräsen">
-            </a-entity>
-        </a-marker>
+      
+<!Marker setup>    
+<!3D-Druck>      
+        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/3D-Druck.patt'>              
           
-            
-        <!Lasercutten>  
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Lasercut.patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#Lasercutten">
-            </a-entity>
-        </a-marker>    
-            
-            <!ecoDesign>    
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/ecoDesign.patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#ecoDesign">
-            </a-entity>
-        </a-marker> 
-            
-        <!Einstieg>    
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Einstieg.patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#Allgemein">
-            </a-entity>
-        </a-marker> 
-            
-            
-            
-        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+    <a-entity gltf-model="url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/3D-Druck_gedoppelt.gltf)"></a-entity>
+      
+          </a-marker> 
+<!Fräsen>      
+      <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Fräsen.patt'>       
+        
+            <a-entity gltf-model="url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Fräsen_doppel.gltf)"></a-entity>
+        
+      </a-marker> 
+
+<!Lasercutt>      
+      <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Lasercut.patt'>       
+        
+            <a-entity gltf-model="url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Lasercutten_Mesh_doppel.gltf)"></a-entity>
+        
+      </a-marker> 
+
+<!Allgemein>      
+      <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/Allgemein.patt'>       
+        
+            <a-entity gltf-model="url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/Ausstellung/Lasercutten_Mesh_doppel.gltf)"></a-entity>
+        
+      </a-marker> 
+    
+   
+      
+
+    
+<!eigene Marker Setup>      
+      <!a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/marker/ecoMaker_Marker.patt'>
+   
+<!Model> 
+       <!a-entity position='0 0.5 0' scale='0.5 0.5 0.5' rotation='45 215 45'obj-model="obj: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/robot/model.obj); mtl: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/robot/materials.mtl)"></a-entity>
+       
+       <!/a-marker>
+      
+    
+<!Animation>    
+    <!a-entity position="0 0.5 0" scale='0.001 0.001 0.001'
+                animation-mixer="clip: *;"
+                gltf-model="src: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/bike/scene.gltf);">
+               <!/a-entity>
+    
+   
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
+
+
+<! modelle>
+
+<!3D-Druck>
+<!a-entity gltf-model="url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/3D-Druck/3D-Druck.gltf)"><!/a-entity>
+
+<!obj>
+
+<!robot>
+ <!a-entity position='0 0.5 0' rotation='45 215 45'obj-model="obj: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/robot/model.obj); mtl: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/robot/materials.mtl)"><!/a-entity>
+
+<!ecoMaker>
+<!a-entity position='-1 -0.5 0' obj-model="obj: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/ecoMaker/ecomaker2.obj); mtl: url(https://raw.githubusercontent.com/EcoMaker/hosting-of-models/master/ecoMaker/ecomaker2.mtl)"></a-entity>
+
+<!box>
+<!a-box position='0 0.5 0' scale='0.1 0.1 0.1' material='color: green;'><!/a-box>
+
+<!-- MIT License
+
+Original work Copyright (c) 2017 Jerome Etienne 
+Modified work Copyright (c) 2019 Markus Roos
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
